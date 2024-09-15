@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
+// import Image from "next/image";
 import { Post } from "@/types";
 
 interface PostCardProps {
@@ -23,12 +23,18 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
       className={`mb-4 ${styles.cardShadow} ${styles.transparentBackground} border-none`}
     >
       <div className={`relative h-64 ${styles.customBgImage}`}>
-        <Image
+        {/* <Image
           src={post.image}
           alt={post.title}
           layout="fill"
           objectFit="cover"
           className="rounded-t-lg md:rounded-l-lg md:rounded-t-none"
+        /> */}
+        <img
+          src={post.image}
+          alt={post.title}
+          loading="lazy" // Lazy loading para optimizar el rendimiento
+          className="w-full h-full object-cover rounded-t-lg md:rounded-l-lg md:rounded-t-none"
         />
       </div>
       <CardHeader className="p-4">

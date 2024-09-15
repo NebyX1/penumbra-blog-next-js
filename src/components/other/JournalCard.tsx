@@ -9,7 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import styles from "@/styles/postcard.module.css";
-import Image from "next/image";
+// import Image from "next/image";
 
 interface Journal {
   image: string;
@@ -31,12 +31,18 @@ const JournalCard: React.FC<JournalCardProps> = ({ journal }) => {
     >
       {/* Imagen con bordes superiores redondeados */}
       <div className={`relative h-64 ${styles.customBgImage}`}>
-        <Image
+        {/* <Image
           src={journal.image}
           alt={journal.title}
           layout="fill"
           objectFit="cover"
           className="rounded-t-lg md:rounded-l-lg md:rounded-t-none"
+        /> */}
+        <img
+          src={journal.image}
+          alt={journal.title}
+          loading="lazy" // Lazy loading para optimizar el rendimiento
+          className="w-full h-full object-cover rounded-t-lg md:rounded-l-lg md:rounded-t-none"
         />
       </div>
       <CardHeader className="p-4">

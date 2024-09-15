@@ -6,6 +6,9 @@ import Footer from "@/components/common/Footer";
 export const metadata: Metadata = {
   title: "Penumbra",
   description: "Disfrutamos de la polémica",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -15,12 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <head />
       <body>
         <Navbar />
         <main className="bg-gray-900">
-          <div className="min-h-[85vh]">
-            {children}
-          </div>
+          <div className="min-h-[85vh]">{children}</div>
         </main>
         <Footer />
       </body>

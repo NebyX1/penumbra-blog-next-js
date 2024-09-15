@@ -13,7 +13,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import Image from "next/image";
+// import Image from "next/image";
 
 // Definimos la interfaz para los parámetros
 interface Props {
@@ -73,12 +73,18 @@ const PostPage = async ({ params }: Props) => {
               <Card className="mb-4 shadow-lg bg-transparent overflow-hidden rounded-lg">
                 <div className="flex flex-col md:flex-row">
                   <div className="w-full md:w-1/3">
-                    <Image
+                    {/* <Image
                       src={image}
                       alt={title}
                       width={500} // Ajusta el ancho según tus necesidades
                       height={300} // Ajusta la altura según tus necesidades
                       className="object-cover w-full h-full rounded-t-lg"
+                    /> */}
+                    <img
+                      src={image}
+                      alt={title}
+                      loading="lazy" // Lazy loading para optimizar el rendimiento
+                      className="w-full h-full object-cover rounded-t-lg md:rounded-l-lg md:rounded-t-none"
                     />
                   </div>
                   <div className="w-full md:w-2/3">
