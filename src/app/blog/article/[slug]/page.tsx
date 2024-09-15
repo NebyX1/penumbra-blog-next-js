@@ -69,7 +69,7 @@ const PostPage = async ({ params }: Props) => {
           </div>
           <div className="flex justify-center">
             <div className="w-full md:w-2/3 lg:w-1/2">
-              <Card className="mb-4 shadow-lg bg-transparent">
+              <Card className="mb-4 shadow-lg bg-transparent overflow-hidden rounded-lg">
                 <div className="flex flex-col md:flex-row">
                   <div className="w-full md:w-1/3">
                     <img
@@ -86,7 +86,8 @@ const PostPage = async ({ params }: Props) => {
                           {formattedDate}
                         </CardDescription>
                         <CardContent className="p-0 text-violet-500 text-lg font-bold">
-                          {title}
+                          <h4>{title}</h4>
+                          <h4>Por: {author}</h4>
                         </CardContent>
                       </div>
                     </CardHeader>

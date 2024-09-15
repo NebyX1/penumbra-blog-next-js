@@ -1,5 +1,6 @@
 export async function getSinglePost(slug: string) {
-  const res = await fetch(`http://127.0.0.1:3500/api/posts/slug/${slug}`, {
+//   const res = await fetch(`http://127.0.0.1:3500/api/posts/slug/${slug}`, {
+    const res = await fetch(`https://loko.penumbra.press/api/posts/slug/${slug}`, {
       method: "GET",
       headers: {
           "Content-Type": "application/json",

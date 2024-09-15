@@ -1,6 +1,6 @@
 export async function getJournals() {
-  // const res = await fetch(`https://loko.penumbra.press/api/journals`
-  const res = await fetch(`http://127.0.0.1:3500/api/journals`, {
+  // const res = await fetch(`http://127.0.0.1:3500/api/journals`, {
+  const res = await fetch(`https://loko.penumbra.press/api/journals`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

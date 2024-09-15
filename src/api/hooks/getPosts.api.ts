@@ -1,5 +1,6 @@
 export async function getPosts() {
-  const res = await fetch(`http://127.0.0.1:3500/api/posts`, {
+  // const res = await fetch(`http://127.0.0.1:3500/api/posts`, {
+    const res = await fetch(`https://loko.penumbra.press/api/posts`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
