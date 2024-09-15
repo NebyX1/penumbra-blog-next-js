@@ -1,12 +1,25 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import { getJournals } from '@/api/hooks/getJournals.api';
-import JournalCard from '@/components/other/JournalCard';
-import ReactPaginate from 'react-paginate';
+import React, { useState, useEffect } from "react";
+import { getJournals } from "@/api/hooks/getJournals.api";
+import JournalCard from "@/components/other/JournalCard";
+import ReactPaginate from "react-paginate";
+
+interface Journal {
+  id: number;
+  title: string;
+  slug: string;
+  author: string;
+  date: string;
+  image: string;
+  summary: string;
+  number: number;
+  year: number;
+  url: string;
+}
 
 const JournalsRender: React.FC = () => {
-  const [journals, setJournals] = useState<any[]>([]);
+  const [journals, setJournals] = useState<Journal[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState<number>(0);
@@ -14,12 +27,12 @@ const JournalsRender: React.FC = () => {
   useEffect(() => {
     // Fetch de las revistas
     getJournals()
-      .then((data) => {
+      .then((data: Journal[]) => {
         setJournals(data);
         setIsLoading(false);
       })
-      .catch((err) => {
-        setError('Hemos tenido un error al cargar las revistas...');
+      .catch(() => {
+        setError("Hemos tenido un error al cargar las revistas...");
         setIsLoading(false);
       });
   }, []);
@@ -44,15 +57,15 @@ const JournalsRender: React.FC = () => {
   return (
     <div className="container mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-4">
-        {currentJournals.map((journal) => (
+        {currentJournals.map((journal: Journal) => (
           <JournalCard key={journal.id} journal={journal} />
         ))}
       </div>
       <div className="flex justify-center mt-4">
         <ReactPaginate
-          previousLabel={'Anterior'}
-          nextLabel={'Siguiente'}
-          breakLabel={'...'}
+          previousLabel={"Anterior"}
+          nextLabel={"Siguiente"}
+          breakLabel={"..."}
           pageCount={pageCount}
           onPageChange={handlePageClick}
           containerClassName="flex space-x-2"

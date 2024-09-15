@@ -1,5 +1,5 @@
-import React from 'react';
-import { Button } from '@/components/ui/button';
+import React from "react";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -7,8 +7,9 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
-import styles from '@/styles/postcard.module.css';
+} from "@/components/ui/card";
+import styles from "@/styles/postcard.module.css";
+import Image from "next/image";
 
 interface Journal {
   image: string;
@@ -25,13 +26,17 @@ interface JournalCardProps {
 
 const JournalCard: React.FC<JournalCardProps> = ({ journal }) => {
   return (
-    <Card className={`mb-4 shadow-lg ${styles.transparentBackground} border-none`}>
+    <Card
+      className={`mb-4 shadow-lg ${styles.transparentBackground} border-none`}
+    >
       {/* Imagen con bordes superiores redondeados */}
       <div className={`relative h-64 ${styles.customBgImage}`}>
-        <img
+        <Image
           src={journal.image}
           alt={journal.title}
-          className="object-cover w-full h-full rounded-t-lg"
+          layout="fill"
+          objectFit="cover"
+          className="rounded-t-lg md:rounded-l-lg md:rounded-t-none"
         />
       </div>
       <CardHeader className="p-4">
@@ -67,4 +72,3 @@ const JournalCard: React.FC<JournalCardProps> = ({ journal }) => {
 };
 
 export default JournalCard;
-

@@ -13,16 +13,17 @@ import {
     SelectTrigger,
     SelectValue,
   } from '@/components/ui/select';
+  import { Post } from '@/types';
 
 const BlogContent: React.FC = () => {
-  const [posts, setPosts] = React.useState<any[]>([]);
-  const [isLoading, setIsLoading] = React.useState<boolean>(true);
-  const [error, setError] = React.useState<string | null>(null);
-  const [currentPage, setCurrentPage] = React.useState<number>(0);
-  const [selectedCategory, setSelectedCategory] = React.useState<string>('all');
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState<number>(0);
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
   // Manejo de la solicitud de datos con useEffect
-  React.useEffect(() => {
+  useEffect(() => {
     const fetchPosts = async () => {
       try {
         const data = await getPosts(); // Llama a la función para obtener los posts
@@ -46,10 +47,10 @@ const BlogContent: React.FC = () => {
   }
 
   // Obtener categorías únicas
-  const categories = ['all', ...Array.from(new Set(posts.map((post: any) => post.category)))];
+  const categories = ['all', ...Array.from(new Set(posts.map((post: Post) => post.category)))];
 
   // Filtrar posts según la categoría seleccionada
-  const filteredPosts = selectedCategory === 'all' ? posts : posts.filter((post: any) => post.category === selectedCategory);
+  const filteredPosts = selectedCategory === 'all' ? posts : posts.filter((post: Post) => post.category === selectedCategory);
 
   const postsPerPage = 3;
   const offset = currentPage * postsPerPage;
@@ -88,7 +89,7 @@ const BlogContent: React.FC = () => {
 
       {/* Listado de Posts */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-4">
-        {currentPosts.map((post: any) => (
+        {currentPosts.map((post: Post) => (
           <PostCard key={post.id} post={post} />
         ))}
       </div>

@@ -10,17 +10,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-
-interface Post {
-  id: string;
-  image: string;
-  title: string;
-  slug: string;
-  author: string;
-  date: string;
-  category?: string;
-  summary: string;
-}
+import Image from "next/image";
+import { Post } from "@/types";
 
 interface PostCardProps {
   post: Post;
@@ -32,15 +23,20 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
       className={`mb-4 ${styles.cardShadow} ${styles.transparentBackground} border-none`}
     >
       <div className={`relative h-64 ${styles.customBgImage}`}>
-        <img
+        <Image
           src={post.image}
           alt={post.title}
-          className="object-cover w-full h-full rounded-t-lg"
+          layout="fill"
+          objectFit="cover"
+          className="rounded-t-lg md:rounded-l-lg md:rounded-t-none"
         />
       </div>
       <CardHeader className="p-4">
         <CardTitle className={styles.customTextViolet}>
-          <Link href={`/blog/article/${post.slug}`} className={styles.hoverUnderline}>
+          <Link
+            href={`/blog/article/${post.slug}`}
+            className={styles.hoverUnderline}
+          >
             {post.title}
           </Link>
         </CardTitle>
@@ -61,7 +57,10 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
         </CardDescription>
       </CardContent>
       <CardFooter className="p-4">
-        <Link href={`/blog/article/${post.slug}`} className={styles.customTextViolet}>
+        <Link
+          href={`/blog/article/${post.slug}`}
+          className={styles.customTextViolet}
+        >
           <Button variant="ghost" className={styles.customButton}>
             Leer Artículo
           </Button>

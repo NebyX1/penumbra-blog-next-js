@@ -3,9 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import PostCard from '@/components/other/PostCard';
 import { getPosts } from '@/api/hooks/getPosts.api'; // Importa la función para obtener los posts
+import { Post } from '@/types';
 
 const LatestPosts: React.FC = () => {
-  const [posts, setPosts] = useState<any[]>([]); // Estado para almacenar los posts
+  const [posts, setPosts] = useState<Post[]>([]); // Estado para almacenar los posts
   const [isLoading, setIsLoading] = useState<boolean>(true); // Estado de carga
   const [error, setError] = useState<string | null>(null); // Estado de error
 
