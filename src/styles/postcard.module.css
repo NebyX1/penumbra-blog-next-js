@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IS:wght@100..400&display=swap');
+
+.customBorder {
+  border: 1px solid #ddd;
+}
+
+.customBgImage {
+  width: 100%;
+  height: 200px;
+  background-position: center;
+}
+
+.customTextViolet {
+  color: #7b3eed;
+  font-family: 'Playwrite IS', sans-serif;
+  text-decoration: none;
+}
+
+.hoverUnderline:hover {
+  text-decoration: none;
+  color: #5728af;
+}
+
+.customButton {
+  transition: color 0.5s, background-color 0.5s, border-color 0.5s;
+}
+
+.customButton:hover {
+  background-color: #7b3eed;
+  border-color: #7b3eed;
+  color: white;
+}
+
+.cardShadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.transparentBackground {
+  background-color: rgba(255, 255, 255, 0.1);
+}

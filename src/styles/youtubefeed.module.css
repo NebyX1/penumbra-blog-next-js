@@ -1,0 +1,23 @@
+.youtubeSection {
+    background-color: transparent;
+    padding: 60px 0;
+  }
+  
+  .youtubeSection h2 {
+    color: #343a40; /* Dark text color */
+  }
+  
+  .youtubeSection p {
+    color: #6c757d; /* Secondary text color */
+  }
+  
+  .youtubeSection .btn-primary {
+    background-color: #ff0000; /* YouTube red */
+    border-color: #ff0000;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  .youtubeSection .btn-primary:hover {
+    background-color: #cc0000;
+    border-color: #cc0000;
+  }

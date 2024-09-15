@@ -1,0 +1,52 @@
+.content {
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+  
+  .content h1,
+  .content h2,
+  .content h3,
+  .content h4,
+  .content h5,
+  .content h6 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .content p {
+    margin-bottom: 1rem;
+  }
+  
+  .content ul,
+  .content ol {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+  }
+  
+  .content blockquote {
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-left: 0.25rem solid #007bff;
+    margin-bottom: 1rem;
+  }
+  
+  .content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+  }
+  
+  .content table th,
+  .content table td {
+    padding: 0.5rem;
+    border: 1px solid #dee2e6;
+  }
+  
+  .content a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .content a:hover {
+    text-decoration: underline;
+  }

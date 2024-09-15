@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IS:wght@100..400&display=swap');
+
+.position-relative {
+  position: relative;
+}
+
+.cover-background {
+  height: 75vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: rgba(5, 54, 70, 0.8);
+}
+
+.header-text {
+  color: rgb(212, 1, 240);
+  text-align: center;
+  font-weight: 300;
+  font-size: clamp(2rem, 5vw, 5rem);
+  font-family: 'Playwrite IS', sans-serif;
+}
+
+.page-item {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.page-link {
+  color: #6c757d;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+.page-link:hover {
+  color: #0056b3;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+
+.active .page-link {
+  background-color: #6c757d;
+  color: white;
+  border-radius: 5px;
+}

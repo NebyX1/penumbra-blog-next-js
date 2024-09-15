@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IS:wght@100..400&display=swap');
+
+.bgColorNavbar {
+  background-color: #25104d;
+}
+
+.navLink {
+  color: rgb(175, 81, 218) !important;
+  font-family: 'Playwrite IS', sans-serif;
+  font-size: large;
+}

@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IS:wght@100..400&display=swap');
+
+.position-relative {
+  position: relative;
+}
+
+.cover-background {
+  height: 75vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(5, 54, 70, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.header-text {
+  font-size: clamp(2rem, 5vw, 5rem);
+  color: rgb(212, 1, 240);
+  text-align: center;
+  font-weight: 300;
+  font-family: 'Playwrite IS', sans-serif;
+}
+
+.text-violet-800 {
+  color: #5b21b6; /* Asegúrate de usar el color que deseas */
+}
+
+.border-violet-800 {
+  border-color: #5b21b6 !important;
+}
+
+.hover-bg-violet-800:hover {
+  background-color: #5b21b6 !important;
+}
+
+.hover-text-white:hover {
+  color: white !important;
+}
